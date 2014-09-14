@@ -112,7 +112,7 @@ The following code produces a histogram with the newly filled data entries:
 
 ```r
 newTotaldailysteps <- with(finaldata, tapply(finaldata$steps, finaldata$date, sum, na.rm=TRUE))
-hist(newTotaldailysteps, main = "Total Number of Steps, Missing Values Added",xlab = "Total Number of Steps")
+hist(newTotaldailysteps, main = "Total Number of Steps, Missing Values Added",xlab = "Total Number of Steps",col="light blue")
 ```
 
 ![plot of chunk missing data histogram](figure/missing data histogram.png) 

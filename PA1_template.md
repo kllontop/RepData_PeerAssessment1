@@ -69,6 +69,11 @@ findmaxminuteint
 
 ```r
 maxminuteint <- max(avgdailysteps)
+maxminuteint
+```
+
+```
+## [1] 206.2
 ```
 Therefore, the 835 minute interval [indexed at 104 in avgdailysteps variable] contains the maximum of approximately 206 steps.
 

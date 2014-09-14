@@ -173,7 +173,7 @@ head(finaldata,5)
 ## 5 1.717 2012-10-01       20    weekday
 ```
 **- Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).**  
-First, the data is subsetted into weekdays and weekends. Then, using tapply(), the steps data is split by interval data and then averaged. Finally, I make a multipaneled plot displaying the progression of average steps taken throughout the course of the day:
+First, the data is subsetted into weekdays and weekends. Then, using tapply(), the steps data is split by interval data and then averaged. Finally, I make a multipaneled plot displaying the progression of average steps taken throughout the course of the day:  
 
 ```r
 weekdaydata <- finaldata[weekfactor=="weekday",]
@@ -194,3 +194,6 @@ mtext("Weekends",side=3,outer=FALSE,line=-1,adj=1,cex=.8,col="dark green")
 
 ![plot of chunk plot weekday v. weekend](figure/plot weekday v. weekend.png) 
 
+There are two main observations from this multipaneled plot:  
+- The subject's activity on the weekends begins later than on the weekdays  
+- Although the peak number of steps on the weekdays is higher than the peak number of steps on the weekends, the activity on the weekend is consistently greater than on the weekdays. On average, the subject takes more steps on a weekend than on a weekday.

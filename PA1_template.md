@@ -9,7 +9,7 @@ For this assignment, I chose to assume that each person would have access to the
 
 
 ```r
-data <- read.csv("C:/Users/Pep Llontop/RepData_PeerAssessment1/activity.csv")
+data <- read.csv("activity.csv")
 ```
 As you can see, I saved the dataset to the variable name "data" and did not have the need to process the data any further at this point.
 

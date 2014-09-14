@@ -41,6 +41,7 @@ By applying max() to the average steps taken daily in each 5-minute interval, we
 findmaxminuteint <- which.max(avgdailysteps)
 findmaxminuteint
 maxminuteint <- max(avgdailysteps)
+maxminuteint
 ```
 Therefore, the 835 minute interval [indexed at 104 in avgdailysteps variable] contains the maximum of approximately 206 steps.
 

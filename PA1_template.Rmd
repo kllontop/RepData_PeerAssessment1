@@ -50,10 +50,11 @@ Therefore, the 835 minute interval [indexed at 104 in avgdailysteps variable] co
 Because the only measurement column is data$steps, I used is.na() to find the number of NA values in the dataset:  
 ``` {r total NAs,echo=TRUE}
 findNAs <- sum(is.na(data$steps))
+findNAs
 ```
 
 **- Create a new dataset that is equal to the original dataset but with the missing data filled in.**  
-I chose to use the calculated means for steps taken in each 5-minute interval from a previous part of the assignment to fill in the missing NA values. Using for and if loops, I stepped through the steps column searching for NAs and replaced those values with the averages:  
+I chose to use the calculated means for steps taken in each 5-minute interval from a previous part of the assignment to fill in the missing NA values. Using for and if loops, I stepped through the steps column searching for NAs and replaced those values with the averages. The resulting data set is previewed below where you can see the missing value repeated in the first column where there were previously NAs:  
 ```{r missing data fill, echo=TRUE}
 splitbyint <- split(data, data$interval)
 avgsteps <- rep(avgdailysteps,each=61)
@@ -77,7 +78,7 @@ hist(newTotaldailysteps, main = "Total Number of Steps, Missing Values Added",xl
 mean(newTotaldailysteps, na.rm=TRUE)
 median(newTotaldailysteps, na.rm=TRUE)
 ```
-It is apparent upon comparison of the two graphs, that replacing the missing values does affect the resulting totals by generally increasing them. The most obvious changes are that far fewer of the sums are within the 0<x<5000 range and more are within the 10000<x<15000 range.  
+It is apparent upon comparison of the two graphs, that replacing the missing values does affect the resulting totals by generally increasing them. In a real research study, this could greatly skew the results. The most obvious changes are that far fewer of the sums are within the 0<x<5000 range and more are within the 10000<x<15000 range. Additionally, we can observe that both the mean and median are greater values than the previously calculated mean and median.    
 
 ##Are there differences in activity patterns between weekdays and weekends?
 **- Create a new factor variable in the dataset with two levels - "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.**  

@@ -10,7 +10,7 @@ For this assignment, I chose to include all the code used to read in the data di
 
 ```r
 url <- "http://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"
-download.file(url,"C:/Users/Pep Llontop/RepData_PeerAssessment1/activity_data.zip")
+download.file(url,"C:/Users/Llontop/RepData_PeerAssessment1/activity_data.zip")
 data <- read.csv(unz("activity_data.zip",filename = "activity.csv"),header = TRUE,stringsAsFactors = FALSE)
 ```
 As you can see, I saved the dataset to the variable name "data" and did not have the need to process the data any further at this point.

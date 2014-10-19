@@ -5,11 +5,13 @@ date: "Sunday, September 14, 2014"
 output: html_document
 ---
 ##Loading and preprocessing the data
-For this assignment, I chose to assume that each person would have access to the data in his/her own directory. My code to read in the data is as follows:
+For this assignment, I chose to include all the code used to read in the data directly from the website. My code to read in the data is as follows:
 
 
 ```r
-data <- read.csv("activity.csv")
+url <- "http://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"
+download.file(url,"C:/Users/Pep Llontop/RepData_PeerAssessment1/activity_data.zip")
+data <- read.csv(unz("activity_data.zip",filename = "activity.csv"),header = TRUE,stringsAsFactors = FALSE)
 ```
 As you can see, I saved the dataset to the variable name "data" and did not have the need to process the data any further at this point.
 

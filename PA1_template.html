@@ -191,9 +191,11 @@ hr {
 
 <body>
 <p>##Loading and preprocessing the data
-For this assignment, I chose to assume that each person would have access to the data in his/her own directory. My code to read in the data is as follows:</p>
+For this assignment, I chose to include all the code used to read in the data directly from the website. My code to read in the data is as follows:</p>
 
-<pre><code class="r">data &lt;- read.csv(&quot;activity.csv&quot;)
+<pre><code class="r">url &lt;- &quot;http://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip&quot;
+download.file(url,&quot;C:/Users/Pep Llontop/RepData_PeerAssessment1/activity_data.zip&quot;)
+data &lt;- read.csv(unz(&quot;activity_data.zip&quot;,filename = &quot;activity.csv&quot;),header = TRUE,stringsAsFactors = FALSE)
 </code></pre>
 
 <p>As you can see, I saved the dataset to the variable name &ldquo;data&rdquo; and did not have the need to process the data any further at this point.</p>
